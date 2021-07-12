@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     StyleSheet , 
     View ,
@@ -13,11 +13,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Register from '../Registration/Register'
 
 const UserLogin = () => {
-    showToast("Logging in");
+    
 }
 
-const gotoReg = ({ navigation }) => {
-    navigation.navigate('Register');
+const gotoReg = () => {
+    
 }
 
 const showToast = (msg) =>{
@@ -30,8 +30,9 @@ const showToast = (msg) =>{
       );
 }
 
-const Login = ({ navigation }) => {
-    
+const Login = () => {
+    [email, setEmail] = useState('');
+    [oassword, setPassword] = useState('');
     return (
         <View style={styles.container}>
             <View style={styles.topHeader}>
@@ -82,7 +83,8 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 18,
         color: '#ffffff',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        paddingVertical: 20
     },
     textInput: {
         alignSelf: 'stretch',
@@ -111,8 +113,9 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end'
     },
     loginImage: {
-        width: 90,
-        resizeMode: 'contain'
+        width: 200,
+        resizeMode: 'contain',
+        height: 60
     }
 });
 
